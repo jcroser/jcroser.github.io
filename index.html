@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        width: 100%;
+        height: auto;
+        overflow: clip;
+      }
+
+      canvas#canvas {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1920 / 1080 !important;
+      }
+    </style>
+    <title>Merge Fields</title>
+  </head>
+  
+  
+  <body>
+    <canvas id="canvas"></canvas>
+    <script src="https://unpkg.com/@rive-app/canvas@2.10.3"></script>
+    <script>
+      const r = new rive.Rive({
+        src: "./Merge Fields Rive.riv",
+        canvas: document.getElementById("canvas"),
+        autoplay: true,
+        automaticallyHandleEvents: true,
+        stateMachines: "State Machine 1",
+        onLoad: () => {
+          r.resizeDrawingSurfaceToCanvas();
+        },
+      });
+    </script>
+  </body>
+</html>
